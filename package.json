@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"pnpm -r --filter=./packages/app run dev",
+    "dev": "pnpm -r --filter=./packages/app run dev",
     "dev:renderer": "pnpm -r --filter=./packages/renderer -w run dev"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "tailwindcss": "^3.2.6",
     "vue": "^3.2.47"
   },
   "devDependencies": {
