@@ -1,0 +1,15 @@
+{
+  "name": "@ahaform/renderer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@ahaform/materials": "workspace:^1.0.0"
+  }
+}
