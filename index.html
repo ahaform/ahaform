@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+
+    <script src="../dist/ahaform.js"></script>
+    <script src="../dist/ahaform.template.js"></script>
+
+    <style>
+        #test1 {
+            width: 750px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="test1"></div>
+
+    <script>
+        const template = new AHAFormTemplate.vivaia({
+            title: 'たっだ３問！',
+            desc: 'カンタン30秒で完了！',
+            img: 'https://cdn.shopify.com/s/files/1/0532/3063/3157/files/20230214-vivaia-XXWS02232-model-product_description-domestic_1_4ff9eaf0-c70e-488c-b81b-a2a036ddf1e0_180x.png?v=1677500044',
+            question: 'Q1.  长时间站立行走后，你的脚部是否经常感到疼痛，酸胀？',
+            stepIndex: 1,
+            stepCount: 3
+        })
+        const form1 = new AHAForm('#test1', {
+            template,
+            submitResolve: function(res){
+                console.log('submit data --->', res)
+            }
+        })
+        form1.init();
+        console.log('ahaForm -->', form1)
+    </script>
+</body>
+</html>
