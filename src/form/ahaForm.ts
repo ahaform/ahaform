@@ -3,7 +3,7 @@ import type { FormOptions, FormSubmitData } from "@/types/types";
 import { generateNode } from "@/utils/node";
 import { addEvent } from "@/utils/browser";
 
-export default class AHAForm {
+export default class AhaForm {
     private target: HTMLElement;
     private options: FormOptions;
     private frame: HTMLIFrameElement;
@@ -63,19 +63,33 @@ export default class AHAForm {
     }
 
     private _handleFrameLoad(): void {
-        const frameHeight = this.frame.contentDocument?.body.scrollHeight;
-        this.frame.style.height = frameHeight + "px";
+
+        this.resizeWindow();
+
+        const oberver = new MutationObserver(() => {
+            this.resizeWindow();
+        });
+        oberver.observe(this.frame.contentWindow?.document.body as Node, {
+            subtree: true,
+            childList: true,
+            attributes: true
+        });
 
         this.frame.contentWindow &&
-            (this.frame.contentWindow.AHAFormSubmitCallback = (
+            (this.frame.contentWindow.AhaFormSubmitCallback = (
                 res: FormSubmitData
             ): void => {
                 this._handleSubmit(res);
             });
     }
 
+    private resizeWindow() {
+        const frameHeight = this.frame.contentDocument?.body.scrollHeight;
+        this.frame.style.height = frameHeight + "px";
+    }
+
     private _handleFrameResize(): void {
-        console.log("frame resize");
+        this.resizeWindow();
     }
 
     private _handleSubmit(formData: FormSubmitData): void {

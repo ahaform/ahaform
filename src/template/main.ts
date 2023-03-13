@@ -1,5 +1,7 @@
-import VIVAIATemplate from "./vivaia";
+import VivaiaTemplate from "./vivaia";
+import SurveyTemplate from "./survey";
 
-window.AHAFormTemplate = {
-    vivaia: VIVAIATemplate
+window.AhaFormTemplate = {
+    vivaia: VivaiaTemplate,
+    survey: SurveyTemplate
 };
