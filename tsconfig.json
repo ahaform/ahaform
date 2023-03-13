@@ -1,0 +1,25 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "allowJs": true,
+        "target": "es5",
+        "useDefineForClassFields": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "strict": true,
+        "jsx": "preserve",
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "lib": ["esnext", "es5", "es2015", "es2016", "es2017", "es2018", "es2022", "dom"],
+        "types": ["node"],
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    },
+    "include": [".d.ts", "src/**/*.ts", "src/**/*.d.ts", ".d.css", "src/**/*.css", "src/**/*.d.css"],
+    "exclude": ["node_modules", "dist"]
+}
+
+
