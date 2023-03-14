@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>survey</title>
+    <script src="../dist/ahaform.js"></script>
+    <script src="../dist/ahaform.template.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        const template = new AhaFormTemplate.survey({
+            data: {
+                language: "English",
+                formData: JSON.stringify([
+                    {
+                        "id": "test",
+                        "tagline": "111",
+                        "title": "11",
+                        "required": true,
+                        "type": "text",
+                        "keepAlive": false,
+                        "multiple": false,
+                        "allowOther": false,
+                        "helpTextShow": false,
+                        "jump": {
+                            "666": ""
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "tagline": "2",
+                        "title": "2",
+                        "required": true,
+                        "type": "text",
+                        "keepAlive": false,
+                        "multiple": false,
+                        "allowOther": false,
+                        "helpTextShow": false,
+                        "jump": {
+                            "_other": "test"
+                        }
+                    },
+                    {
+                        "id": "__complete",
+                        "title": "2额 ",
+                        "subtitle": "",
+                        "description": "",
+                        "showSubmit": false
+                    },
+                    {
+                        "id": "test",
+                        "tagline": "test",
+                        "title": "",
+                        "required": true,
+                        "type": "choice",
+                        "keepAlive": false,
+                        "multiple": false,
+                        "allowOther": false,
+                        "helpTextShow": false,
+                        "options": [
+                            {
+                                "label": "1",
+                                "value": "1"
+                            },
+                            {
+                                "label": "2",
+                                "value": "2",
+                                "imageSrc": ""
+                            },
+                            {
+                                "label": "3",
+                                "value": "3",
+                                "imageSrc": ""
+                            }
+                        ]
+                    }
+                ]),
+                baseFontSize: { unit: "px", value: "14" },
+                tagFontSize: { unit: "em", value: "1" },
+                tagColor: "#555",
+                textFontSize: { unit: "em", value: "1.36" },
+                textColor: "#181818",
+                subFontSize: { unit: "em", value: "0.8" },
+                subColor: "#999",
+                answerFontSize: { unit: "em", value: "0.96" },
+                completeTitleFontSize: { unit: "em", value: "1.6" },
+                completeTitleColor: "#181818",
+                completeSubtitleFontSize: { unit: "em", value: "1" },
+                completeSubtitleColor: "#181818",
+                completeDescriptionFontSize: { unit: "em", value: "1.2" },
+                completeDescriptionColor: "#3B3B3B",
+            }
+        })
+        const form1 = new AhaForm('#app', {
+            template,
+            submitResolve: function (res) {
+                console.log('submit data --->', res)
+            }
+        })
+        form1.init();
+        console.log('ahaForm -->', form1)
+    </script>
+</body>
+
+</html>

@@ -20,7 +20,7 @@
     <div id="test1"></div>
 
     <script>
-        const template = new AHAFormTemplate.vivaia({
+        const template = new AhaFormTemplate.vivaia({
             title: 'たっだ３問！',
             desc: 'カンタン30秒で完了！',
             img: 'https://cdn.shopify.com/s/files/1/0532/3063/3157/files/20230214-vivaia-XXWS02232-model-product_description-domestic_1_4ff9eaf0-c70e-488c-b81b-a2a036ddf1e0_180x.png?v=1677500044',
@@ -28,7 +28,7 @@
             stepIndex: 1,
             stepCount: 3
         })
-        const form1 = new AHAForm('#test1', {
+        const form1 = new AhaForm('#test1', {
             template,
             submitResolve: function(res){
                 console.log('submit data --->', res)
