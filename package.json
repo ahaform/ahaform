@@ -6,10 +6,12 @@
   "scripts": {
     "debug": "cross-env NODE_DEBUG=1 & yarn dev & http-server . -p 3006",
     "dev": "cross-env NODE_ENV=development rollup --config build/rollup.config.dev.js --configDebug --bundleConfigAsCjs -w",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.prod.js --bundleConfigAsCjs &&  node ./build/upload.js",
     "stylelint": "stylelint --fix .css,.less,.scss src",
     "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
     "prettier": "prettier --write ."
   },
+  "type": "module",
   "keywords": [
     "form",
     "forms",
@@ -21,7 +23,7 @@
     "src/**/*.{js,jsx,ts,.tsx,vue,html,md}": "eslint --config .eslintrc.js",
     "src/**/*.{css,less,scss}": "stylelint --config .stylelintrc.js",
     "*.{ts,tsx,js,json,html,yml,css,less,md}": "prettier --write"
-    },
+  },
   "dependencies": {
     "rollup": "^3.18.0",
     "typescript": "^4.9.5"
@@ -37,6 +39,7 @@
     "@rollup/plugin-typescript": "^11.0.0",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
+    "aws-sdk": "^2.1334.0",
     "babel-eslint": "^10.1.0",
     "core-js": "^3.29.0",
     "cross-env": "^7.0.3",
