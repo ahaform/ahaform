@@ -2,7 +2,7 @@ import Template from "@/template/template";
 
 export default class SurveyTemplate extends Template {
 
-    constructor(options: Options) {
+    constructor(options: unknown) {
         super(options);
 
     }
