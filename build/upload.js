@@ -15,7 +15,7 @@ const UPLOAD_LIST = [
     },
     {
         filePath: "./dist/ahaform.template.js",
-        uploadPath: "sdk/ahaform/ahaform.js"
+        uploadPath: "sdk/ahaform/ahaform.template.js"
     }
 ];
 
