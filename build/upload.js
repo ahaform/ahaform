@@ -23,6 +23,7 @@ const UPLOAD_LIST = [
 upload();
 
 function buildParams(key, content) {
+    console.log(process.env.S3_BUCKET);
     return {
         Bucket: process.env.S3_BUCKET || 'ec-static-prod',
         Key: key,
