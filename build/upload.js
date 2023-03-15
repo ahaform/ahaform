@@ -24,7 +24,7 @@ upload();
 
 function buildParams(key, content) {
     return {
-        Bucket: process.env.S3_BUCKET,
+        Bucket: process.env.S3_BUCKET || 'ec-static-prod',
         Key: key,
         Body: content,
         ContentEncoding: "string",
