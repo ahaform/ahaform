@@ -34,7 +34,7 @@ function buildParams(key, content) {
 
 async function upload() {
     UPLOAD_LIST.forEach(config => {
-        const filePath = path.resolve('../', config.filePath);
+        const filePath = path.resolve('./', config.filePath);
         fs.readFile(filePath, "utf-8", (err, data) => {
             if (!err) {
                 upload2S3(config.uploadPath, data, {
