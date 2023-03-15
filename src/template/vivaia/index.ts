@@ -1,5 +1,4 @@
 import Template from "@/template/template";
-import { uuid } from "@/utils/uuid";
 import templateStyles from "./style.css";
 
 interface Options {
@@ -11,21 +10,11 @@ interface Options {
     stepCount: number;
 }
 
-export default class VIVAIATemplate extends Template {
-    public options: Options;
+export default class VivaiaTemplate extends Template {
 
     constructor(options: Options) {
-        super();
-        this.templateId = uuid();
-        this.options = options;
+        super(options);
 
-        if (!options) {
-            throw new Error("Template options required!");
-        }
-
-        this.template = this._getTemplate();
-        this.style = this._getStyle();
-        this.script = this._getScript();
     }
 
     _getTemplate(): string {
@@ -69,7 +58,7 @@ export default class VIVAIATemplate extends Template {
             const templateId = "${this.templateId}";
 
             function handleChange(e){
-                AHAFormSubmitCallback({
+                AhaFormSubmitCallback({
                     templateId,
                     res: e.value
                 })

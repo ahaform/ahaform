@@ -5,10 +5,10 @@ declare module "*.module.scss";
 
 declare global {
     interface Window {
-        AHAForm?: any;
-        AHAFormTemplate?: {
+        AhaForm?: any;
+        AhaFormTemplate?: {
             [key: string]: FormTemplate;
         };
-        AHAFormSubmitCallback?: (formData: FormSubmitData) => void;
+        AhaFormSubmitCallback?: (formData: FormSubmitData) => void;
     }
 }

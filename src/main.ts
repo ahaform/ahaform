@@ -1,5 +1,5 @@
-import AHAForm from "@/form/ahaForm";
+import AhaForm from "@/form/ahaForm";
 import template from "@/template";
 
-window.AHAForm = AHAForm;
-window.AHAFormTemplate = template;
+window.AhaForm = AhaForm;
+window.AhaFormTemplate = template;

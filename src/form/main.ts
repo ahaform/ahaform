@@ -1,3 +1,3 @@
-import AHAForm from "./ahaForm";
+import AhaForm from "./ahaForm";
 
-window.AHAForm = AHAForm;
+window.AhaForm = AhaForm;
