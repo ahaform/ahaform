@@ -12,13 +12,11 @@ if (!process.env.S3_ACCESS_KEY_ID || !process.env.S3_SECRET_ACCESS_KEY) {
 const UPLOAD_LIST = [
     {
         filePath: "../dist/ahaform.js",
-        uploadPath: "sdk/ahaform/ahaform.js",
-        startSync: false
+        uploadPath: "sdk/ahaform/ahaform.js"
     },
     {
         filePath: "../dist/ahaform.template.js",
-        uploadPath: "sdk/ahaform/ahaform.js",
-        startSync: true
+        uploadPath: "sdk/ahaform/ahaform.js"
     }
 ];
 
@@ -36,7 +34,7 @@ function buildParams(key, content) {
 
 async function upload() {
     UPLOAD_LIST.forEach(config => {
-        const filePath = path.resolve(__dirname, config.filePath);
+        const filePath = path.resolve('../', config.filePath);
         fs.readFile(filePath, "utf-8", (err, data) => {
             if (!err) {
                 upload2S3(config.uploadPath, data, {
