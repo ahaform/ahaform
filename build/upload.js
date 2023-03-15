@@ -1,4 +1,3 @@
-import path from 'path';
 import fs from 'fs';
 import AWS from 'aws-sdk';
 
@@ -23,11 +22,8 @@ const UPLOAD_LIST = [
 upload();
 
 function buildParams(key, content) {
-    console.log("S3_ACCESS_KEY_ID", process.env.S3_ACCESS_KEY_ID);
-    console.log("S3_SECRET_ACCESS_KEY", process.env.S3_SECRET_ACCESS_KEY);
-    console.log("S3_BUCKET", process.env.S3_BUCKET);
     return {
-        Bucket: process.env.S3_BUCKET || 'ec-static-prod',
+        Bucket: process.env.S3_BUCKET,
         Key: key,
         Body: content,
         ContentEncoding: "string",
