@@ -9,7 +9,7 @@ export default class SurveyTemplate extends Template {
 
     _getTemplate(): string {
         return `
-            <div id='ahaApp'>loading</div>
+            <div id='ahaApp'></div>
         `;
     }
 
