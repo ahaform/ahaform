@@ -19,7 +19,7 @@ export default class SurveyTemplate extends Template {
 
     _getScript(): string {
         return `
-            import('https://ecstatic.ptengine.com/ecp/1b35d857-3f52-4d6e-911c-70e4a6062481/app/03fa9de5-679b-4273-b282-0626dd798370/0.1.0/bundle.js').then(r=>{
+            import('https://ecstatic.ptengine.com/sdk/ahaform/bundle.js').then(r=>{
                 const { loadApp } = r;
                 const app = loadApp({ options:${JSON.stringify(this.options)}});
                 app.mount(document.querySelector('#ahaApp'));
