@@ -6,6 +6,7 @@
   "scripts": {
     "debug": "cross-env NODE_DEBUG=1 & yarn dev & http-server . -p 3006",
     "dev": "cross-env NODE_ENV=development rollup --config build/rollup.config.dev.js --configDebug --bundleConfigAsCjs -w",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.prod.js --bundleConfigAsCjs",
     "stylelint": "stylelint --fix .css,.less,.scss src",
     "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
     "prettier": "prettier --write ."

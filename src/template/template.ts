@@ -1,14 +1,18 @@
+import { FormSchema } from '@/types/types';
+
 export default class Template {
     public templateId: string;
     public template: string;
     public style: string;
     public script: string;
+    public schema: FormSchema;
 
     constructor() {
         this.templateId = "";
         this.template = "";
         this.style = "";
         this.script = "";
+        this.schema = {};
     }
 
     _getTemplate(): string {
@@ -21,5 +25,9 @@ export default class Template {
 
     _getScript(): string {
         throw new Error("Template script is required!");
+    }
+
+    _getSchema(): FormSchema {
+        throw new Error("Template schema is required!");
     }
 }

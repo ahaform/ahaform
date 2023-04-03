@@ -1,6 +1,7 @@
 import Template from "@/template/template";
-import { uuid } from "@/utils/uuid";
+import { uuid} from "@/utils/uuid";
 import templateStyles from "./style.css";
+import { FormSchema } from '@/types/types';
 
 interface Options {
     title: string;
@@ -26,6 +27,7 @@ export default class VIVAIATemplate extends Template {
         this.template = this._getTemplate();
         this.style = this._getStyle();
         this.script = this._getScript();
+        this.schema = this._getSchema();
     }
 
     _getTemplate(): string {
@@ -75,5 +77,48 @@ export default class VIVAIATemplate extends Template {
                 })
             }
         `;
+    }
+
+    _getSchema(): FormSchema {
+        return {
+            title: {
+                type: 'text',
+                name: 'title',
+                label: 'Title',
+                validation: 'required'
+            },
+            desc: {
+                type: 'text',
+                name: 'desc',
+                label: 'Desc',
+                validation: 'required'
+            },
+            img: {
+                type: 'image',
+                name: 'image',
+                label: 'Image',
+                validation: 'required',
+                value: ''
+            },
+            question: {
+                type: 'text',
+                name: 'desc',
+                label: 'Question',
+                validation: 'required'
+            },
+            stepIndex: {
+                type: 'text',
+                name: 'stepIndex',
+                label: 'Step Index',
+                validation: 'required'
+            },
+            stepCount: {
+                type: 'text',
+                name: 'stepCount',
+                label: 'Step Count',
+                validation: 'required',
+                value: 3
+            }
+        };
     }
 }
